@@ -3,7 +3,7 @@
 <h2>Configurações para teste</h2>
 <div>
   Em
-  <i>BrunoTestApp\App.xaml.cs</i>
+  <i>\BrunoTestApp\BrunoTestApp\App.xaml.cs</i>
   <br />
   Preencha as seguintes constantes:
   <pre>
