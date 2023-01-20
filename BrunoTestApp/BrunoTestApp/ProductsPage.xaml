@@ -2,40 +2,59 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BrunoTestApp.ProductsPage">
+    <ContentPage.Resources>
+        <StyleSheet Source="/Style/ProductsPage.css" />
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="ListViewProducts" HasUnevenRows="true">
+            <ListView x:Name="ListViewProducts" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="8">
+                            
+                            <!-- Using CSS -->
+                            <!--<StackLayout StyleClass="product" Orientation="Horizontal">
+                                <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label StyleClass="name" Text="{Binding Name}" />
+                                    <Label StyleClass="description" Text="{Binding Description}"></Label>
+                                </StackLayout>
+                                <Label StyleClass="coin" Text="R$" />
+                                <Label StyleClass="price" Text="{Binding Price}" />
+                            </StackLayout>-->
+                            <!-- /Using CSS -->
+                            
+                            <!-- Using Attributes -->
+                            <StackLayout Orientation="Horizontal" StyleClass="Product" Padding="8" BackgroundColor="WhiteSmoke">
                                 <StackLayout HorizontalOptions="StartAndExpand">
-                                    
+
                                     <Label Text="{Binding Name}" 
                                            FontAttributes="Bold" 
                                            FontSize="Large" 
-                                           TextColor="Black"/>
-                                    
+                                           TextColor="Black" />
+
                                     <Label Text="{Binding Description}" 
                                            FontAttributes="Italic" 
                                            FontSize="Small" 
-                                           TextColor="Gray"/>
-                                    
+                                           TextColor="Gray" />
+
                                 </StackLayout>
                                 
                                 <Label Text="R$"  
-                                       VerticalTextAlignment="Center" 
+                                       VerticalTextAlignment="Start" 
+                                       Padding="0,4,0,0"
                                        FontAttributes="Bold" 
                                        FontSize="Micro" 
-                                       TextColor="DarkGreen"/>
-                                
+                                       TextColor="DarkGreen" />
+
                                 <Label Text="{Binding Price}" 
+                                       VerticalTextAlignment="Start" 
                                        FontAttributes="Bold" 
-                                       FontSize="Medium" 
-                                       VerticalTextAlignment="Center" 
-                                       TextColor="DarkGreen"/>
-                                
+                                       FontSize="Large" 
+                                       TextColor="DarkGreen" />
+
                             </StackLayout>
+                            <!-- /Using Attributes -->
+                            
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

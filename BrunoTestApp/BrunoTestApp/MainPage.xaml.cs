@@ -1,5 +1,6 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Vonage;
+using BrunoTestApp.Message;
 
 namespace BrunoTestApp
 {
@@ -9,20 +10,21 @@ namespace BrunoTestApp
         {
             InitializeComponent();
 
-            ButtonProducts.Clicked += async delegate
-            {
-                await Navigation.PushAsync(new ProductsPage());
-            };
+            ButtonProducts.Clicked += ButtonProducts_Clicked;
+            ButtonSupport.Clicked += ButtonSupport_Clicked;
+        }
 
-            ButtonSupport.Clicked += async delegate
-            {
-                if (!CrossVonage.Current.TryStartSession())
-                {
-                    return;
-                }
+        private async void ButtonProducts_Clicked(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new ProductsPage());
+        }
 
-                await Navigation.PushAsync(new SupportPage());
-            };
+        private async void ButtonSupport_Clicked(object sender, System.EventArgs e)
+        {
+            if (!CrossVonage.Current.TryStartSession())
+                Msg.Show("Service is temporarily unavailable, please try again later");
+
+            await Navigation.PushAsync(new SupportPage());
         }
     }
 }

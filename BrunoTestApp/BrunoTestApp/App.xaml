@@ -3,6 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BrunoTestApp.App">
     <Application.Resources>
-
+        <StyleSheet Source="/Style/App.css" />
     </Application.Resources>
 </Application>
