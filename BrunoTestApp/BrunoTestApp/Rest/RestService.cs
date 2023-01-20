@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BrunoTestApp.Message;
 using BrunoTestApp.Models;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace BrunoTestApp.Rest
 {
@@ -36,7 +36,7 @@ namespace BrunoTestApp.Rest
             }
             catch (HttpRequestException e)
             {
-                //TODO: Handle HttpRequestExceptions
+                Msg.Show(e.Message);
             }
 
             return products;
