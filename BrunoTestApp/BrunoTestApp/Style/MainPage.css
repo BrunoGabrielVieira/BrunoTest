@@ -1,0 +1,16 @@
+﻿Frame {
+    background-color: #2196F3;
+}
+
+Frame > Label {
+    color: #ffffff;
+    font-size: 36;
+    text-align: center;
+}
+
+Button {
+    color: #ffffff;
+    background-color: #2196F3;
+    font-size: 18;
+    height: 75;
+}
