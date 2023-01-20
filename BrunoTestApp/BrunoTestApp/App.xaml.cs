@@ -1,13 +1,11 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Vonage;
-using Xamarin.Forms.Xaml;
 
 namespace BrunoTestApp
 {
     public partial class App : Application
     {
-        public const string API_BASE_ADDRESS = "";
+        public const string API_BASE_ADDRESS = "http://192.168.15.190:45455/api/";
         public const string VONAGE_API_KEY = "";
         public const string VONAGE_USER_TOKEN = "";
         public const string VONAGE_SESSION_ID = "";
